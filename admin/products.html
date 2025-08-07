@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Management - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <span class="logo-text">Vandana Couture</span>
+                    <span class="admin-badge">Admin</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="admin-profile">
+                    <img src="https://via.placeholder.com/40x40/ff6b6b/ffffff?text=A" alt="Admin" class="admin-avatar">
+                    <div class="admin-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="products.html" class="nav-link">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="inventory.html" class="nav-link">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1>Products Management</h1>
+                        <p>Manage your product catalog and inventory</p>
+                    </div>
+                    <div class="header-right">
+                        <button class="btn-primary" onclick="openAddProductModal()">
+                            <i class="fas fa-plus"></i>
+                            Add Product
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon products">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>89</h3>
+                        <p>Total Products</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +12.5%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon active">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>76</h3>
+                        <p>Active Products</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +8.7%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon low-stock">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Low Stock Items</p>
+                        <span class="stat-change negative">
+                            <i class="fas fa-arrow-up"></i>
+                            +3.2%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon revenue">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>₹18,50,000</h3>
+                        <p>Total Value</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +15.3%
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters and Search -->
+            <div class="filters-section">
+                <div class="filters-left">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search products..." id="productSearch">
+                    </div>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="bridal">Bridal</option>
+                        <option value="party">Party Wear</option>
+                        <option value="casual">Casual</option>
+                        <option value="ethnic">Ethnic</option>
+                        <option value="western">Western</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+                <div class="filters-right">
+                    <button class="btn-secondary" onclick="exportProducts()">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                    <button class="btn-secondary" onclick="bulkActions()">
+                        <i class="fas fa-cog"></i>
+                        Bulk Actions
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Product cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn prev" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="pagination-numbers">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span>...</span>
+                    <button class="pagination-btn">6</button>
+                </div>
+                <button class="pagination-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="modal-close" onclick="closeAddProductModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="addProductForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productName">Product Name *</label>
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category *</label>
+                        <select id="productCategory" name="productCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="bridal">Bridal</option>
+                            <option value="party">Party Wear</option>
+                            <option value="casual">Casual</option>
+                            <option value="ethnic">Ethnic</option>
+                            <option value="western">Western</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice">Price (₹) *</label>
+                        <input type="number" id="productPrice" name="productPrice" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productStock">Stock Quantity *</label>
+                        <input type="number" id="productStock" name="productStock" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="productDescription" rows="4" placeholder="Enter product description..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productSize">Available Sizes</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="XS"> XS
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="S"> S
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="M" checked> M
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="L"> L
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="XL"> XL
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="sizes" value="XXL"> XXL
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productColors">Available Colors</label>
+                        <input type="text" id="productColors" name="productColors" placeholder="Red, Blue, Green...">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productImage">Product Image</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeAddProductModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal" id="productDetailsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Product Details</h3>
+                <button class="modal-close" onclick="closeProductDetailsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="productDetailsContent">
+                <!-- Product details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html> 

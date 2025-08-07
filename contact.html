@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vandana Couture</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="logo-text">Vandana Couture</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Right Side Icons -->
+            <div class="nav-right">
+                <!-- Cart -->
+                <div class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <!-- Profile Dropdown -->
+                <div class="nav-icon profile-dropdown">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <i class="fas fa-user"></i>
+                            <span>Welcome, User!</span>
+                        </div>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            My Orders
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="dropdown-item">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="#" class="dropdown-item logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Get in touch with us for any inquiries or appointments</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you! Whether you have a question about our services, need to schedule an appointment, or want to discuss a custom design, we're here to help.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Our Boutique</h4>
+                            <p>123 Fashion Street, Design District<br>Mumbai, Maharashtra 400001<br>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210<br>+91 98765 43211</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@vandanacouture.com<br>appointments@vandanacouture.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 10:00 AM - 8:00 PM<br>Sunday: 11:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="custom-tailoring">Custom Tailoring</option>
+                                <option value="design-consultation">Design Consultation</option>
+                                <option value="bridal-services">Bridal Services</option>
+                                <option value="party-wear">Party Wear</option>
+                                <option value="alterations">Alterations</option>
+                                <option value="express-delivery">Express Delivery</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates and offers
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Interactive Map Coming Soon</h3>
+                    <p>Our boutique is located in the heart of Mumbai's fashion district</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does it take to complete a custom outfit?</h3>
+                    <p>Typically, a custom outfit takes 2-4 weeks depending on the complexity and your requirements. We can also offer express services for urgent orders.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer alterations for existing garments?</h3>
+                    <p>Yes, we provide professional alteration services for all types of garments. We can adjust sizes, modify styles, and make repairs as needed.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is your cancellation policy?</h3>
+                    <p>We understand that plans can change. You can cancel or reschedule appointments up to 24 hours in advance without any charges.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you ship internationally?</h3>
+                    <p>Currently, we serve customers within India. We're working on expanding our services to international markets soon.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I bring my own fabric?</h3>
+                    <p>Absolutely! We welcome customers who want to use their own fabric. Our designers can guide you on the best way to use your chosen material.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How many fittings are included?</h3>
+                    <p>Our standard package includes 2 fittings, but we offer unlimited fittings in our premium packages to ensure perfect results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vandana Couture</h3>
+                    <p>Where fashion meets expectations. Creating beautiful memories through elegant designs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vandana Couture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html> 

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vandana Couture - Where Fashion Meets Expectations</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="logo-text">Vandana Couture</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Right Side Icons -->
+            <div class="nav-right">
+                <!-- Cart -->
+                <div class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <!-- Profile Dropdown -->
+                <div class="nav-icon profile-dropdown">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <i class="fas fa-user"></i>
+                            <span>Welcome, User!</span>
+                        </div>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            My Orders
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="dropdown-item">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="#" class="dropdown-item logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel" id="home">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="carousel-content">
+                    <h1 class="carousel-title">Welcome to Vandana Couture</h1>
+                    <h2 class="carousel-subtitle">Where Fashion Meets Expectations</h2>
+                    <p class="carousel-description">Discover our exclusive collection of designer wear that defines elegance and style</p>
+                    <button class="carousel-btn">Explore Collection</button>
+                </div>
+                <div class="carousel-image">
+                    <div class="fashion-placeholder">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="carousel-content">
+                    <h1 class="carousel-title">Bridal Collection</h1>
+                    <h2 class="carousel-subtitle">Make Your Special Day Perfect</h2>
+                    <p class="carousel-description">Exquisite bridal wear that makes you look like a queen on your wedding day</p>
+                    <button class="carousel-btn">View Bridal Collection</button>
+                </div>
+                <div class="carousel-image">
+                    <div class="fashion-placeholder bridal">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="carousel-content">
+                    <h1 class="carousel-title">Party Wear</h1>
+                    <h2 class="carousel-subtitle">Dazzle at Every Event</h2>
+                    <p class="carousel-description">Stunning party wear that ensures you're the center of attention</p>
+                    <button class="carousel-btn">Shop Party Wear</button>
+                </div>
+                <div class="carousel-image">
+                    <div class="fashion-placeholder party">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Navigation -->
+        <div class="carousel-nav">
+            <button class="carousel-dot active" data-slide="0"></button>
+            <button class="carousel-dot" data-slide="1"></button>
+            <button class="carousel-dot" data-slide="2"></button>
+        </div>
+        
+        <!-- Carousel Arrows -->
+        <button class="carousel-arrow prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-arrow next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <!-- Category Filters and Products -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="bridal">Bridal</button>
+                <button class="filter-btn" data-category="party">Party Wear</button>
+                <button class="filter-btn" data-category="casual">Casual</button>
+                <button class="filter-btn" data-category="ethnic">Ethnic</button>
+                <button class="filter-btn" data-category="western">Western</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Bridal Products -->
+                <div class="product-card" data-category="bridal">
+                    <div class="product-image">
+                        <div class="image-placeholder bridal">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Bridal Lehenga</h3>
+                        <p class="product-category">Bridal Collection</p>
+                        <div class="product-price">₹25,000</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bridal">
+                    <div class="product-image">
+                        <div class="image-placeholder bridal">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Bridal Saree</h3>
+                        <p class="product-category">Bridal Collection</p>
+                        <div class="product-price">₹18,000</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Party Wear Products -->
+                <div class="product-card" data-category="party">
+                    <div class="product-image">
+                        <div class="image-placeholder party">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Glamorous Party Gown</h3>
+                        <p class="product-category">Party Wear</p>
+                        <div class="product-price">₹12,000</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="party">
+                    <div class="product-image">
+                        <div class="image-placeholder party">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Cocktail Dress</h3>
+                        <p class="product-category">Party Wear</p>
+                        <div class="product-price">₹8,500</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Casual Products -->
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <div class="image-placeholder casual">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Comfortable Casual Kurta</h3>
+                        <p class="product-category">Casual Wear</p>
+                        <div class="product-price">₹2,500</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <div class="image-placeholder casual">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Stylish Casual Dress</h3>
+                        <p class="product-category">Casual Wear</p>
+                        <div class="product-price">₹3,200</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Ethnic Products -->
+                <div class="product-card" data-category="ethnic">
+                    <div class="product-image">
+                        <div class="image-placeholder ethnic">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Traditional Anarkali</h3>
+                        <p class="product-category">Ethnic Wear</p>
+                        <div class="product-price">₹6,500</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ethnic">
+                    <div class="product-image">
+                        <div class="image-placeholder ethnic">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Saree</h3>
+                        <p class="product-category">Ethnic Wear</p>
+                        <div class="product-price">₹9,800</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Western Products -->
+                <div class="product-card" data-category="western">
+                    <div class="product-image">
+                        <div class="image-placeholder western">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Evening Dress</h3>
+                        <p class="product-category">Western Wear</p>
+                        <div class="product-price">₹7,500</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="western">
+                    <div class="product-image">
+                        <div class="image-placeholder western">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Blouse</h3>
+                        <p class="product-category">Western Wear</p>
+                        <div class="product-price">₹4,200</div>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn prev" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="pagination-numbers">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                </div>
+                <button class="pagination-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Vandana Couture created the most beautiful bridal lehenga for my wedding. The attention to detail and quality of work is exceptional. I felt like a queen on my special day!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Bride</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The team at Vandana Couture is incredibly professional and talented. They understood exactly what I wanted and delivered beyond my expectations. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Anjali Patel</h4>
+                            <p>Party Wear Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"I've been a loyal customer for 5 years now. The quality of their work and the personalized service they provide is unmatched. Every piece I own from them is perfect!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Meera Singh</h4>
+                            <p>Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The alterations service is fantastic! They made my dress fit perfectly and the turnaround time was amazing. The staff is so friendly and helpful."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Riya Gupta</h4>
+                            <p>Alteration Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The design consultation was so helpful! They really took the time to understand my style and created something unique that I absolutely love."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Kavya Reddy</h4>
+                            <p>Design Consultation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Express delivery service is a lifesaver! I needed an outfit urgently and they delivered it perfectly on time. The quality was still top-notch despite the rush."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Zara Khan</h4>
+                            <p>Express Delivery Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vandana Couture</h3>
+                    <p>Where fashion meets expectations. Creating beautiful memories through elegant designs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vandana Couture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html> 

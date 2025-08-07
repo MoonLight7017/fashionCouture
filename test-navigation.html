@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - Vandana Couture</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="logo-text">Vandana Couture</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Right Side Icons -->
+            <div class="nav-right">
+                <!-- Cart -->
+                <div class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </div>
+                
+                <!-- Profile Dropdown -->
+                <div class="nav-icon profile-dropdown">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <i class="fas fa-user"></i>
+                            <span>Welcome, User!</span>
+                        </div>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            My Orders
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="dropdown-item">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="#" class="dropdown-item logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Test Content -->
+    <section style="padding: 100px 20px; text-align: center;">
+        <div class="container">
+            <h1>Navigation Test Page</h1>
+            <p>This page is to test the navigation functionality.</p>
+            
+            <div style="margin: 40px 0;">
+                <h3>Test Instructions:</h3>
+                <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+                    <li>Click on the profile icon (user icon) in the top right</li>
+                    <li>Click "Edit Profile" - should navigate to profile.html</li>
+                    <li>Click on the profile icon again</li>
+                    <li>Click "My Orders" - should navigate to orders.html</li>
+                    <li>Click on the cart icon - should navigate to cart.html</li>
+                </ol>
+            </div>
+            
+            <div style="margin: 40px 0;">
+                <h3>Direct Links:</h3>
+                <a href="profile.html" style="display: inline-block; margin: 10px; padding: 10px 20px; background: #ff6b6b; color: white; text-decoration: none; border-radius: 5px;">Go to Profile</a>
+                <a href="orders.html" style="display: inline-block; margin: 10px; padding: 10px 20px; background: #ff6b6b; color: white; text-decoration: none; border-radius: 5px;">Go to Orders</a>
+                <a href="cart.html" style="display: inline-block; margin: 10px; padding: 10px 20px; background: #ff6b6b; color: white; text-decoration: none; border-radius: 5px;">Go to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/home.js"></script>
+</body>
+</html> 

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Vandana Couture</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <span class="logo-text">Vandana Couture</span>
+                    <span class="admin-badge">Admin</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="admin-profile">
+                    <img src="https://via.placeholder.com/40x40/ff6b6b/ffffff?text=A" alt="Admin" class="admin-avatar">
+                    <div class="admin-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="inventory.html" class="nav-link">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's what's happening with your business today.</p>
+                <div class="date-display">
+                    <i class="fas fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon revenue">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>₹2,45,000</h3>
+                        <p>Total Revenue</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +12.5%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orders">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>156</h3>
+                        <p>Total Orders</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +8.3%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon customers">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,234</h3>
+                        <p>Total Customers</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +15.2%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon products">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>89</h3>
+                        <p>Active Products</p>
+                        <span class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            -2.1%
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Revenue Analytics</h3>
+                        <div class="chart-controls">
+                            <select id="revenuePeriod">
+                                <option value="7">Last 7 Days</option>
+                                <option value="30" selected>Last 30 Days</option>
+                                <option value="90">Last 3 Months</option>
+                                <option value="365">Last Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Order Status Distribution</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="orderStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <div class="recent-orders">
+                    <div class="section-header">
+                        <h3>Recent Orders</h3>
+                        <a href="orders.html" class="view-all">View All</a>
+                    </div>
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-info">
+                                <h4>#VC2024001</h4>
+                                <p>Priya Sharma</p>
+                                <span class="order-date">2 hours ago</span>
+                            </div>
+                            <div class="order-status pending">
+                                <span>Pending</span>
+                            </div>
+                            <div class="order-amount">
+                                ₹25,000
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-info">
+                                <h4>#VC2024002</h4>
+                                <p>Anjali Patel</p>
+                                <span class="order-date">4 hours ago</span>
+                            </div>
+                            <div class="order-status processing">
+                                <span>Processing</span>
+                            </div>
+                            <div class="order-amount">
+                                ₹12,000
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-info">
+                                <h4>#VC2024003</h4>
+                                <p>Meera Singh</p>
+                                <span class="order-date">6 hours ago</span>
+                            </div>
+                            <div class="order-status delivered">
+                                <span>Delivered</span>
+                            </div>
+                            <div class="order-amount">
+                                ₹18,500
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-info">
+                                <h4>#VC2024004</h4>
+                                <p>Kavya Reddy</p>
+                                <span class="order-date">8 hours ago</span>
+                            </div>
+                            <div class="order-status shipped">
+                                <span>Shipped</span>
+                            </div>
+                            <div class="order-amount">
+                                ₹8,500
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-products">
+                    <div class="section-header">
+                        <h3>Top Selling Products</h3>
+                        <a href="products.html" class="view-all">View All</a>
+                    </div>
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <div class="image-placeholder bridal">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4>Royal Bridal Lehenga</h4>
+                                <p>Bridal Collection</p>
+                                <span class="product-sales">45 sales</span>
+                            </div>
+                            <div class="product-revenue">
+                                ₹11,25,000
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-image">
+                                <div class="image-placeholder party">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4>Glamorous Party Gown</h4>
+                                <p>Party Wear</p>
+                                <span class="product-sales">32 sales</span>
+                            </div>
+                            <div class="product-revenue">
+                                ₹3,84,000
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-image">
+                                <div class="image-placeholder ethnic">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4>Traditional Anarkali</h4>
+                                <p>Ethnic Wear</p>
+                                <span class="product-sales">28 sales</span>
+                            </div>
+                            <div class="product-revenue">
+                                ₹1,82,000
+                            </div>
+                        </div>
+
+                        <div class="product-item">
+                            <div class="product-image">
+                                <div class="image-placeholder casual">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h4>Stylish Casual Dress</h4>
+                                <p>Casual Wear</p>
+                                <span class="product-sales">25 sales</span>
+                            </div>
+                            <div class="product-revenue">
+                                ₹80,000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="actions-grid">
+                    <button class="action-btn">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Product</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Customer</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Generate Report</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-envelope"></i>
+                        <span>Send Newsletter</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html> 

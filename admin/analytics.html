@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <span class="logo-text">Vandana Couture</span>
+                    <span class="admin-badge">Admin</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="admin-profile">
+                    <img src="https://via.placeholder.com/40x40/ff6b6b/ffffff?text=A" alt="Admin" class="admin-avatar">
+                    <div class="admin-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="inventory.html" class="nav-link">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1>Analytics & Reports</h1>
+                        <p>Comprehensive insights into your business performance</p>
+                    </div>
+                    <div class="header-right">
+                        <select id="dateRange" class="date-selector">
+                            <option value="7">Last 7 Days</option>
+                            <option value="30" selected>Last 30 Days</option>
+                            <option value="90">Last 3 Months</option>
+                            <option value="365">Last Year</option>
+                        </select>
+                        <button class="btn-primary" onclick="generateReport()">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Total Revenue</h3>
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="metric-value">₹24,50,000</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +15.3% vs last period
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Total Orders</h3>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="metric-value">1,567</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +8.7% vs last period
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Average Order Value</h3>
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="metric-value">₹15,650</div>
+                    <div class="metric-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        +6.2% vs last period
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <h3>Conversion Rate</h3>
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="metric-value">3.8%</div>
+                    <div class="metric-change negative">
+                        <i class="fas fa-arrow-down"></i>
+                        -0.5% vs last period
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Revenue Trend -->
+                <div class="chart-card large">
+                    <div class="chart-header">
+                        <h3>Revenue Trend</h3>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" data-period="daily">Daily</button>
+                            <button class="chart-btn" data-period="weekly">Weekly</button>
+                            <button class="chart-btn" data-period="monthly">Monthly</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="revenueTrendChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Sales by Category -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Sales by Category</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Customer Demographics -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Customer Demographics</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="demographicsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Order Status Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Order Status</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="orderStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="performance-section">
+                <div class="performance-card">
+                    <h3>Top Performing Products</h3>
+                    <div class="product-list">
+                        <div class="product-item">
+                            <div class="product-rank">1</div>
+                            <div class="product-info">
+                                <h4>Royal Bridal Lehenga</h4>
+                                <p>Bridal Collection</p>
+                            </div>
+                            <div class="product-stats">
+                                <span class="sales">45 units</span>
+                                <span class="revenue">₹11,25,000</span>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-rank">2</div>
+                            <div class="product-info">
+                                <h4>Glamorous Party Gown</h4>
+                                <p>Party Wear</p>
+                            </div>
+                            <div class="product-stats">
+                                <span class="sales">32 units</span>
+                                <span class="revenue">₹3,84,000</span>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-rank">3</div>
+                            <div class="product-info">
+                                <h4>Traditional Anarkali</h4>
+                                <p>Ethnic Wear</p>
+                            </div>
+                            <div class="product-stats">
+                                <span class="sales">28 units</span>
+                                <span class="revenue">₹1,82,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-card">
+                    <h3>Customer Insights</h3>
+                    <div class="insights-list">
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>New Customers</h4>
+                                <p>78 new customers this month</p>
+                                <span class="insight-change positive">+12.3%</span>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-repeat"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Repeat Customers</h4>
+                                <p>45% of customers returned</p>
+                                <span class="insight-change positive">+5.7%</span>
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Customer Satisfaction</h4>
+                                <p>4.8/5 average rating</p>
+                                <span class="insight-change positive">+0.2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geographic Data -->
+            <div class="geographic-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Sales by Region</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="regionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="region-stats">
+                    <h3>Top Regions</h3>
+                    <div class="region-list">
+                        <div class="region-item">
+                            <span class="region-name">Mumbai</span>
+                            <div class="region-bar">
+                                <div class="bar-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="region-value">₹8,50,000</span>
+                        </div>
+                        <div class="region-item">
+                            <span class="region-name">Delhi</span>
+                            <div class="region-bar">
+                                <div class="bar-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="region-value">₹7,20,000</span>
+                        </div>
+                        <div class="region-item">
+                            <span class="region-name">Bangalore</span>
+                            <div class="region-bar">
+                                <div class="bar-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="region-value">₹6,50,000</span>
+                        </div>
+                        <div class="region-item">
+                            <span class="region-name">Chennai</span>
+                            <div class="region-bar">
+                                <div class="bar-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="region-value">₹4,50,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html> 

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Vandana Couture</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <span class="logo-text">Vandana Couture</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <!-- Right Side Icons -->
+            <div class="nav-right">
+                <!-- Cart -->
+                <div class="nav-icon cart-icon active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </div>
+                
+                <!-- Profile Dropdown -->
+                <div class="nav-icon profile-dropdown">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <i class="fas fa-user"></i>
+                            <span>Welcome, User!</span>
+                        </div>
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </a>
+                        <a href="orders.html" class="dropdown-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            My Orders
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="dropdown-item">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login
+                        </a>
+                        <a href="#" class="dropdown-item logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Shopping Cart</h1>
+            <p class="page-subtitle">Review your items and proceed to checkout</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h3>Shopping Cart (3 items)</h3>
+                        <button class="clear-cart-btn">Clear Cart</button>
+                    </div>
+
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <div class="image-placeholder bridal">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <h4>Royal Bridal Lehenga</h4>
+                            <p class="item-category">Bridal Collection</p>
+                            <p class="item-size">Size: M | Color: Red & Gold</p>
+                            <div class="item-price">₹25,000</div>
+                        </div>
+                        <div class="item-quantity">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-item="1">-</button>
+                                <input type="number" value="1" min="1" max="10" class="quantity-input" data-item="1">
+                                <button class="quantity-btn plus" data-item="1">+</button>
+                            </div>
+                        </div>
+                        <div class="item-total">
+                            <span class="total-amount">₹25,000</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="remove-item-btn" data-item="1">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <div class="image-placeholder party">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <h4>Glamorous Party Gown</h4>
+                            <p class="item-category">Party Wear</p>
+                            <p class="item-size">Size: S | Color: Black</p>
+                            <div class="item-price">₹12,000</div>
+                        </div>
+                        <div class="item-quantity">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-item="2">-</button>
+                                <input type="number" value="1" min="1" max="10" class="quantity-input" data-item="2">
+                                <button class="quantity-btn plus" data-item="2">+</button>
+                            </div>
+                        </div>
+                        <div class="item-total">
+                            <span class="total-amount">₹12,000</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="remove-item-btn" data-item="2">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <div class="image-placeholder ethnic">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <h4>Traditional Anarkali</h4>
+                            <p class="item-category">Ethnic Wear</p>
+                            <p class="item-size">Size: L | Color: Green</p>
+                            <div class="item-price">₹6,500</div>
+                        </div>
+                        <div class="item-quantity">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-item="3">-</button>
+                                <input type="number" value="1" min="1" max="10" class="quantity-input" data-item="3">
+                                <button class="quantity-btn plus" data-item="3">+</button>
+                            </div>
+                        </div>
+                        <div class="item-total">
+                            <span class="total-amount">₹6,500</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="remove-item-btn" data-item="3">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal (3 items)</span>
+                            <span>₹43,500</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>₹500</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span>₹2,175</span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span>Discount</span>
+                            <span>-₹2,000</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>₹44,175</span>
+                        </div>
+                    </div>
+
+                    <!-- Coupon Code -->
+                    <div class="coupon-section">
+                        <h4>Have a coupon?</h4>
+                        <div class="coupon-input">
+                            <input type="text" placeholder="Enter coupon code" id="couponCode">
+                            <button class="apply-coupon-btn">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button class="checkout-btn">
+                        <i class="fas fa-lock"></i>
+                        Proceed to Checkout
+                    </button>
+
+                    <!-- Continue Shopping -->
+                    <a href="home.html" class="continue-shopping-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Continue Shopping
+                    </a>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-methods">
+                        <h4>We Accept</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Viewed -->
+            <div class="recently-viewed">
+                <h3>Recently Viewed</h3>
+                <div class="recent-items">
+                    <div class="recent-item">
+                        <div class="image-placeholder casual">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h4>Comfortable Casual Kurta</h4>
+                        <p>₹2,500</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="recent-item">
+                        <div class="image-placeholder western">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4>Elegant Evening Dress</h4>
+                        <p>₹7,500</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="recent-item">
+                        <div class="image-placeholder ethnic">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Designer Saree</h4>
+                        <p>₹9,800</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vandana Couture</h3>
+                    <p>Where fashion meets expectations. Creating beautiful memories through elegant designs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vandana Couture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+</body>
+</html> 

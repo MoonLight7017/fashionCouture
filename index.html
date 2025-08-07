@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Beautiful Forms</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .welcome-card {
+            text-align: center;
+            padding: 50px 30px;
+        }
+        
+        .welcome-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        
+        .welcome-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .welcome-btn {
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 
+                8px 8px 16px #d1d9e6,
+                -8px -8px 16px #ffffff;
+        }
+        
+        .primary-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+        
+        .secondary-btn {
+            background: #ffffff;
+            color: #2c3e50;
+            border: 2px solid #ecf0f1;
+        }
+        
+        .welcome-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                12px 12px 24px #d1d9e6,
+                -12px -12px 24px #ffffff;
+        }
+        
+        .welcome-btn:active {
+            transform: translateY(0);
+            box-shadow: 
+                4px 4px 8px #d1d9e6,
+                -4px -4px 8px #ffffff;
+        }
+        
+        .features {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 480px) {
+            .welcome-card {
+                padding: 30px 20px;
+            }
+            
+            .welcome-title {
+                font-size: 28px;
+            }
+            
+            .welcome-subtitle {
+                font-size: 16px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .welcome-btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-card welcome-card">
+            <h1 class="welcome-title">Welcome to Vandana Couture</h1>
+            <p class="welcome-subtitle">Choose your authentication method</p>
+            
+            <div class="button-group">
+                <a href="login.html" class="welcome-btn primary-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </a>
+                <a href="register.html" class="welcome-btn secondary-btn">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Secure</h3>
+                    <p class="feature-desc">Your data is protected with industry-standard security</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

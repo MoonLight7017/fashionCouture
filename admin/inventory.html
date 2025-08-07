@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <span class="logo-text">Vandana Couture</span>
+                    <span class="admin-badge">Admin</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="admin-profile">
+                    <img src="https://via.placeholder.com/40x40/ff6b6b/ffffff?text=A" alt="Admin" class="admin-avatar">
+                    <div class="admin-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="inventory.html" class="nav-link">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1>Inventory Management</h1>
+                        <p>Track stock levels and manage inventory efficiently</p>
+                    </div>
+                    <div class="header-right">
+                        <button class="btn-primary" onclick="openStockAdjustmentModal()">
+                            <i class="fas fa-plus"></i>
+                            Stock Adjustment
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon inventory">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,234</h3>
+                        <p>Total Items</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +5.2%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon low-stock">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Low Stock Items</p>
+                        <span class="stat-change negative">
+                            <i class="fas fa-arrow-up"></i>
+                            +2.1%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon out-of-stock">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>3</h3>
+                        <p>Out of Stock</p>
+                        <span class="stat-change negative">
+                            <i class="fas fa-arrow-up"></i>
+                            +1.0%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon value">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>₹18,50,000</h3>
+                        <p>Inventory Value</p>
+                        <span class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +8.7%
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Overview -->
+            <div class="inventory-overview">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Stock Level Overview</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="stockLevelChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="alerts-panel">
+                    <h3>Stock Alerts</h3>
+                    <div class="alerts-list" id="alertsList">
+                        <!-- Alerts will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters and Search -->
+            <div class="filters-section">
+                <div class="filters-left">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search inventory..." id="inventorySearch">
+                    </div>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="bridal">Bridal</option>
+                        <option value="party">Party Wear</option>
+                        <option value="casual">Casual</option>
+                        <option value="ethnic">Ethnic</option>
+                        <option value="western">Western</option>
+                    </select>
+                    <select id="stockFilter">
+                        <option value="">All Stock Levels</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+                <div class="filters-right">
+                    <button class="btn-secondary" onclick="exportInventory()">
+                        <i class="fas fa-download"></i>
+                        Export
+                    </button>
+                    <button class="btn-secondary" onclick="generateInventoryReport()">
+                        <i class="fas fa-file-alt"></i>
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-container">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAllInventory">
+                            </th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>SKU</th>
+                            <th>Current Stock</th>
+                            <th>Min Stock</th>
+                            <th>Status</th>
+                            <th>Last Updated</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                        <!-- Inventory rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn prev" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="pagination-numbers">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span>...</span>
+                    <button class="pagination-btn">7</button>
+                </div>
+                <button class="pagination-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Stock Adjustment Modal -->
+    <div class="modal" id="stockAdjustmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Stock Adjustment</h3>
+                <button class="modal-close" onclick="closeStockAdjustmentModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="modal-form" id="stockAdjustmentForm">
+                <div class="form-group">
+                    <label for="adjustmentProduct">Product *</label>
+                    <select id="adjustmentProduct" name="adjustmentProduct" required>
+                        <option value="">Select Product</option>
+                        <!-- Products will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adjustmentType">Adjustment Type *</label>
+                        <select id="adjustmentType" name="adjustmentType" required>
+                            <option value="">Select Type</option>
+                            <option value="add">Add Stock</option>
+                            <option value="remove">Remove Stock</option>
+                            <option value="set">Set Stock Level</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="adjustmentQuantity">Quantity *</label>
+                        <input type="number" id="adjustmentQuantity" name="adjustmentQuantity" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adjustmentReason">Reason</label>
+                    <textarea id="adjustmentReason" name="adjustmentReason" rows="3" placeholder="Enter reason for adjustment..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeStockAdjustmentModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Apply Adjustment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Inventory Details Modal -->
+    <div class="modal" id="inventoryDetailsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Inventory Details</h3>
+                <button class="modal-close" onclick="closeInventoryDetailsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="inventoryDetailsContent">
+                <!-- Inventory details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+    <script src="js/inventory.js"></script>
+</body>
+</html> 
